@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 0 15vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  height: 100vh;
+}
+.settings {
+  height: 15vh;
+}
+.container {
+  height: 70vh;
+}
+.additions {
+  height: 15vh;
+}
