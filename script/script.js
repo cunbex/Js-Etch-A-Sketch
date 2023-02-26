@@ -1,26 +1,31 @@
 const container = document.querySelector(".container");
-const setting = document.querySelector(".setting");
-const addition = document.querySelector(".addition");
-const start = document.querySelector(".start");
-
-start.addEventListener("click", askForLayout);
-
-function askForLayout() {
-  let numberOfDivs = parseInt(
-    prompt(
-      "Enter a valid number less than 65 \nthis works like this input = 64 => layout = 64x64... \nPS: did the max layout 64x64 for the sake of my potato pc memory"
-    )
-  );
-  if (isNaN(numberOfDivs) || numberOfDivs > 64) {
-    askForLayout();
+const layout = document.querySelector("input[type=range]");
+const eraser = document.querySelector("#eraser");
+const colorMode = document.querySelector("#colormode");
+const clear = document.querySelector("#clear");
+const rainbowMode = document.querySelector("#rainbowmode");
+const colorInput = document.querySelector("input[type=color]");
+window.addEventListener("load", createDivs(16));
+colorMode.addEventListener("click", (e) => {
+  colorInput.addEventListener("change", (e) => {
+    console.log(e.target.value);
+  });
+});
+layout.addEventListener("change", (e) => {
+  createDivs(e.target.value);
+});
+eraser.addEventListener("click", erase);
+clear.addEventListener("click", () => {
+  if (container.children.length === 0) {
+    confirm("Please pick a layout first");
   }
-  createDivs(numberOfDivs);
-}
+  const pixelDivs = document.querySelectorAll(".draw");
+  pixelDivs.forEach((pixelDiv) => {
+    pixelDiv.style.backgroundColor = "white";
+  });
+});
+function erase() {}
 function createDivs(numberOfDivs) {
-  container.removeChild(start);
-  container.classList.remove("initial");
-  container.style.border = "1px solid black";
-  container.classList.add("grid");
   container.style.gridTemplateColumns = `repeat(${numberOfDivs}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${numberOfDivs}, 1fr)`;
   for (let i = 0; i < numberOfDivs * numberOfDivs; i++) {

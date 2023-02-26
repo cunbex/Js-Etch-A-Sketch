@@ -11,13 +11,40 @@
 </head>
 
 <body>
+  <header>
+    <h1>Etch-A-Sketch</h1>
+  </header>
   <main>
-    <section class="setting"></section>
-    <section class="container initial">
-      <button class="start">CLICK ME</button>
+    <section class="setting">
+      <div class="colors">
+        <input type='color' id='color'>
+      </div>
+      <button class="btn" id="colormode">Color mode</button>
+      <button class="btn" id="rainbowmode">Rainbow mode</button>
+      <button class="btn" id="eraser">Eraser</button>
+      <button class="btn" id="clear">Clear layout</button>
+      <div class="layout-setting">
+        <label for="range">Pick Layout</label>
+        <input type="range" name="range" id="range" max="64" min="16" step="1" list="values" value="16">
+        <datalist id="values">
+          <option value="16" label="16x16"></option>
+          <option value="32" label="32x32"></option>
+          <option value="48" label="48x48"></option>
+          <option value="64" label="64x64"></option>
+        </datalist>
+      </div>
+
     </section>
-    <section class="addition"></section>
+    <section class="container grid">
+    </section>
   </main>
+  <footer>
+    <p>Copyright &copy; 2023 Cunbex </p>
+    <a href="https://github.com/cunbex/project-Etch-A-Sketch"><img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Github-circle_%28CoreUI_Icons_v1.0.0%29.svg/2048px-Github-circle_%28CoreUI_Icons_v1.0.0%29.svg.png"
+        alt="Github logo">
+    </a>
+  </footer>
 </body>
 
 </html>
