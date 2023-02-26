@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  height: 20vh;
+  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +30,7 @@ main {
   grid-template-columns: 40% 60%;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 75vh;
   width: 70vw;
 }
 
@@ -59,7 +59,7 @@ main {
 }
 
 .btn:hover {
-  background-color: #1abc9a;
+  background-color: #8aaa8a;
 }
 
 .btn:active {
