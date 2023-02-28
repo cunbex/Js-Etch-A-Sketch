@@ -25,6 +25,7 @@ colorInput.addEventListener("change", (e) => {
   runningColor = e.target.value;
 });
 colorMode.addEventListener("click", () => {
+  runningColor = colorInput.value;
   colorType = 0;
 });
 rainbowMode.addEventListener("click", () => {
